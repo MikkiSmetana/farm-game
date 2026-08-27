@@ -1,0 +1,25 @@
+{
+  "name": "farm-game",
+  "version": "1.0.0",
+  "description": "Browser farm game with in-game cosmetic items monetization for kids",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "npx http-server -p 8000",
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": [
+    "game",
+    "farm",
+    "browser",
+    "kids",
+    "monetization",
+    "javascript"
+  ],
+  "author": "MikkiSmetana",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MikkiSmetana/farm-game.git"
+  }
+}

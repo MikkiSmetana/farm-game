@@ -1,0 +1,544 @@
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Заголовок */
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.currency-display {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.coins, .gems {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+/* Вкладки */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tab-btn {
+    padding: 12px 24px;
+    background: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tab-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tab-btn.active {
+    background: #667eea;
+    color: white;
+}
+
+/* Вкладки контента */
+.main-content {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Кнопки */
+.btn-primary, .btn-secondary, .btn-buy, .btn-buy-real-money, .btn-collect {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5568d3;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background: #48bb78;
+    color: white;
+    font-size: 0.85em;
+    padding: 8px 12px;
+}
+
+.btn-secondary:hover {
+    background: #38a169;
+}
+
+.btn-buy, .btn-buy-real-money {
+    background: #ed8936;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+}
+
+.btn-buy:hover, .btn-buy-real-money:hover {
+    background: #dd6b20;
+}
+
+.btn-collect {
+    background: #48bb78;
+    color: white;
+    padding: 8px 16px;
+    font-size: 0.85em;
+}
+
+/* Сетки карточек */
+.crops-grid, .animals-shop, .shop-grid, .decorations-shop {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Карточки */
+.crop-card, .animal-card, .shop-item-card, .decoration-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.crop-card:hover, .animal-card:hover, .shop-item-card:hover, .decoration-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.crop-icon, .animal-icon, .shop-item-icon, .decoration-icon {
+    font-size: 3em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.crop-card h3, .animal-card h3, .shop-item-card h3, .decoration-card h4 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.crop-card p, .animal-card p, .shop-item-card p, .decoration-card p {
+    color: #666;
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.shop-description {
+    font-size: 0.85em;
+    color: #764ba2;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.shop-item-price {
+    background: #667eea;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.price-amount {
+    font-size: 1.1em;
+}
+
+.shop-info {
+    font-size: 0.8em;
+    color: #999;
+    margin-top: 10px;
+}
+
+/* Поле фермы */
+.farm-field, .animals-field {
+    margin-top: 30px;
+}
+
+.farm-field h2, .animals-field h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.field {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.field-cell {
+    aspect-ratio: 1;
+    border-radius: 15px;
+    border: 3px solid #ddd;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.field-cell:hover {
+    transform: scale(1.05);
+    border-color: #667eea;
+}
+
+.empty-cell {
+    font-size: 2em;
+    color: white;
+}
+
+.crop-emoji {
+    font-size: 2.5em;
+}
+
+.crop-ready {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.crop-growing {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-bar {
+    width: 80%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #48bb78 0%, #38a169 100%);
+    transition: width 0.5s ease;
+}
+
+/* Животные */
+.animals-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.animal-display-card {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.animal-display-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.animal-display-icon {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.animal-display-card h4 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.animal-display-card p {
+    color: #666;
+    margin: 5px 0;
+}
+
+.animal-display-card button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Декорации */
+.decorations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.decoration-item {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.deco-emoji {
+    font-size: 2.5em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.decoration-item p {
+    color: #333;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+/* Модальные окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.modal-content h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.modal-crops {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Уведомления */
+.notification {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.1em;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+    z-index: 9999;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Пустые сообщения */
+.empty-message {
+    text-align: center;
+    color: #999;
+    padding: 40px 20px;
+    font-size: 1.1em;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .currency-display {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .crops-grid, .animals-shop, .shop-grid, .decorations-shop {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .modal-content {
+        width: 90%;
+        margin: 30% auto;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .notification {
+        bottom: 20px;
+        right: 20px;
+        font-size: 0.9em;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .header {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .header h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .currency-display {
+        font-size: 1em;
+        gap: 10px;
+    }
+
+    .coins, .gems {
+        padding: 8px 15px;
+    }
+
+    .tabs {
+        gap: 5px;
+    }
+
+    .tab-btn {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+    .main-content {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .crops-grid, .animals-shop, .shop-grid, .decorations-shop {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .field {
+        gap: 10px;
+    }
+
+    .crop-icon, .animal-icon, .shop-item-icon, .decoration-icon {
+        font-size: 2.5em;
+    }
+}

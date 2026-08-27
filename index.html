@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веселая Ферма</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Заголовок и валюта -->
+        <div class="header">
+            <h1>🌾 Веселая Ферма</h1>
+            <div class="currency-display">
+                <span class="coins">💰 Монеты: <span id="coins">0</span></span>
+                <span class="gems">💎 Кристаллы: <span id="gems">0</span></span>
+            </div>
+        </div>
+
+        <!-- Основное содержимое -->
+        <div class="main-content">
+            <!-- Вкладки навигации -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="farm">🌾 Ферма</button>
+                <button class="tab-btn" data-tab="animals">🐄 Животные</button>
+                <button class="tab-btn" data-tab="shop">🛍️ Магазин</button>
+                <button class="tab-btn" data-tab="decorations">✨ Декорации</button>
+            </div>
+
+            <!-- Вкладка Ферма -->
+            <div class="tab-content active" id="farm">
+                <div class="farm-container">
+                    <h2>Посадите растения</h2>
+                    <div class="crops-grid" id="cropsGrid">
+                        <!-- Растения будут добавлены JS -->
+                    </div>
+                </div>
+                <div class="farm-field">
+                    <h2>Ваше поле (нажмите, чтобы посадить)</h2>
+                    <div class="field" id="field">
+                        <!-- Ячейки поля -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вкладка Животные -->
+            <div class="tab-content" id="animals">
+                <div class="animals-container">
+                    <h2>Купите животных</h2>
+                    <div class="animals-shop" id="animalsShop">
+                        <!-- Животные будут добавлены JS -->
+                    </div>
+                </div>
+                <div class="animals-field">
+                    <h2>Ваши животные</h2>
+                    <div class="animals-display" id="animalsDisplay">
+                        <!-- Животные будут отображены JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вкладка Магазин -->
+            <div class="tab-content" id="shop">
+                <h2>🛍️ Магазин предметов</h2>
+                <div class="shop-grid" id="shopGrid">
+                    <!-- Товары будут добавлены JS -->
+                </div>
+            </div>
+
+            <!-- Вкладка Декорации -->
+            <div class="tab-content" id="decorations">
+                <h2>✨ Ваши декорации</h2>
+                <div class="decorations-container">
+                    <div class="decorations-shop" id="decorationsShop">
+                        <!-- Декорации будут добавлены JS -->
+                    </div>
+                    <div class="placed-decorations" id="placedDecorations">
+                        <!-- Размещённые декорации -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для выбора растения -->
+    <div class="modal" id="cropModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Выберите растение</h3>
+            <div class="modal-crops" id="modalCrops">
+                <!-- Варианты растений -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно покупки животного -->
+    <div class="modal" id="buyAnimalModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="animalInfo">
+                <!-- Информация о животном -->
+            </div>
+            <button class="btn-buy" id="confirmBuyAnimal">Купить</button>
+        </div>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="data.js"></script>
+    <script src="game.js"></script>
+    <script src="shop.js"></script>
+</body>
+</html>
